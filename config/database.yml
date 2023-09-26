@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+group :production do
+  gem 'pg' # for Heroku deployment
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
